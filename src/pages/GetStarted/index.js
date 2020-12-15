@@ -2,8 +2,9 @@ import React from 'react';
 import {ImageBackground, StyleSheet, Text, View} from 'react-native';
 import {ILBackgroundGetStarted, ILLogo} from '../../assets';
 import {Button, Gap} from '../../components';
+import {colors, fonts} from '../../utils';
 
-const GetStarted = () => {
+const GetStarted = ({navigation}) => {
   return (
     <ImageBackground source={ILBackgroundGetStarted} style={styles.page}>
       <View>
@@ -13,9 +14,16 @@ const GetStarted = () => {
         </Text>
       </View>
       <View>
-        <Button title="Get Started" btnType="primary" />
+        <Button
+          title="Get Started"
+          btnType="primary"
+          onPress={() => navigation.navigate('RegisterScreen')}
+        />
         <Gap height={16} />
-        <Button title="Sign In" />
+        <Button
+          title="Sign In"
+          onPress={() => navigation.replace('LoginScreen')}
+        />
       </View>
     </ImageBackground>
   );
@@ -32,8 +40,8 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 28,
     // fontWeight: '600',
-    color: 'white',
+    color: colors.white,
     marginTop: 91,
-    fontFamily: 'Nunito-SemiBold',
+    fontFamily: fonts.primary[600],
   },
 });
