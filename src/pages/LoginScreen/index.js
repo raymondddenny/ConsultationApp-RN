@@ -5,7 +5,7 @@ import {ILLogo} from '../../assets';
 import {Button, Link, Input, Gap} from '../../components';
 import {colors, fonts} from '../../utils';
 
-const LoginScreen = () => {
+const LoginScreen = ({navigation}) => {
   return (
     <ScrollView style={styles.page}>
       <View>
@@ -17,7 +17,11 @@ const LoginScreen = () => {
         <Gap height={12} />
         <Link title="Forgot My Password" size={12} />
         <Gap height={40} />
-        <Button title="Sign In" btnType="primary" onPress={() => {}} />
+        <Button
+          title="Sign In"
+          btnType="primary"
+          onPress={() => navigation.replace('MainApp')}
+        />
         <Gap height={20} />
         <Link title="Create My Account" size={18} align="center" />
         <Gap height={100} />
